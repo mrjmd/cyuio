@@ -19,6 +19,8 @@ class Blockstack extends Component {
     let isSignedIn = this.checkSignedInStatus();
     if (isSignedIn) {
       const person = this.loadPerson();
+      // Setting state here isn't ideal, but the use of window
+      // in blockstack's checks mean I can't do it in the constructor.
       this.setState({
         isSignedIn: true,
         person: person
