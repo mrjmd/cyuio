@@ -11,7 +11,7 @@ Currently ```npm run deploy``` will build the static site with Gatsby, push it t
 
 [IPFS](https://gateway.ipfs.io/ipns/QmaLp9R3mX38RpFH2hiud6r3FbTGup5mDfbFuNCahBAXAw/)
 
-[DAT](dat://196c3058aaa82d964b6b4084f0076b3e4a5c45809cebc80f8a814cbce30af14a/) (requires Beaker browser)
+[DAT](dat://196c3058aaa82d964b6b4084f0076b3e4a5c45809cebc80f8a814cbce30af14a/) (requires Beaker browser, and markdown doesn't like links to dat addreses) - dat://196c3058aaa82d964b6b4084f0076b3e4a5c45809cebc80f8a814cbce30af14a/
 
 ## Roadmap
 
