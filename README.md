@@ -1,7 +1,7 @@
 # cyu.io
 This static distributed project was bootstrapped with the default Gatsby starter.
 
-It currently deploys to Github Pages, DAT, and IPFS, although the IPFS protocol requires a manual step to keep the latest deployment in sync with my IPNS peer.
+It currently deploys to Github Pages, DAT, and IPFS, although the IPFS protocol requires a manual step to keep the latest deployment in sync with my IPNS peer. It also includes a Blockstack authentication demo.
 
 Currently ```npm run deploy``` will build the static site with Gatsby, push it to Github Pages, share it on DAT, and add it to IPFS. Then we must manually grab the IPFS hash generated for the public directory and run ```ipfs name publish {HASH}```.
 
@@ -42,6 +42,16 @@ Currently ```npm run deploy``` will build the static site with Gatsby, push it t
 * Deploy!: ```npm run deploy```
 * Post deploy, name publish IPFS, using directory hash from ```ipfs add``` command above: ```ipfs name publish $DIR_HASH```
 * Your peer name address hash will be the output from this command, which can then be viewed at: ```http://gateway.ipfs.io/ipns/$NAME_HASH```
+
+### Add Blockstack authentication
+
+* Download and install [Blockstack](https://blockstack.org/install), and run the application.
+* To fully test authentication, you will need to edit your Blockstack profile, by visiting ```http://localhost:8888/profiles``` and editing your settings there. You can also purchase a .id name but this should not be necessary for testing.
+* Add blockstack.js to project: ```npm install blockstack```
+* In project root, create directory ```static/``` and add [manifest.json]() and a favicon.ico to it.
+* Add basic Blockstack component and import it / use it in index page.
+* ```npm run develop``` and test out authentication process works!
+* Deploy!
 
 ## Demo this project
 
