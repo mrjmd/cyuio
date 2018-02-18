@@ -29,7 +29,8 @@ Currently ```npm run deploy``` will build the static site with Gatsby, push it t
 
 * Install DAT: ```npm install -g dat```
 * Create DAT in project root: ```dat create```
-* Add dat share to deploy script in package.json, remembering to copy the dat.json file into the public/ directory: ```[...] && cp dat.json public && dat share public```
+* In project root, create directory ```static/``` and move the file ```dat.json``` into it.
+* Add dat share to deploy script in package.json: ```[...] && dat share public```
 * Deploy!: ```npm run deploy```
 * DAT address will be included in the output from deploy, and visible via Beaker browser.
 
@@ -48,8 +49,8 @@ Currently ```npm run deploy``` will build the static site with Gatsby, push it t
 * Download and install [Blockstack](https://blockstack.org/install), and run the application.
 * To fully test authentication, you will need to edit your Blockstack profile, by visiting ```http://localhost:8888/profiles``` and editing your settings there. You can also purchase a .id name but this should not be necessary for testing.
 * Add blockstack.js to project: ```npm install blockstack```
-* In project root, create directory ```static/``` and add [manifest.json]() and a favicon.ico to it.
-* Add basic Blockstack component and import it / use it in index page.
+* Add [manifest.json](https://github.com/mrjmd/cyuio/blob/master/static/manifest.json) and a favicon.ico to project's ```static/``` directory.
+* Add basic [Blockstack component](https://github.com/mrjmd/cyuio/blob/master/src/components/Blockstack/index.js) and import it / use it in [index](https://github.com/mrjmd/cyuio/blob/master/src/pages/index.js) page.
 * ```npm run develop``` and test out authentication process works!
 * Deploy!
 

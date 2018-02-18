@@ -20,7 +20,7 @@
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && cp dat.json public && dat share public && ipfs add -r public && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && dat share public && ipfs add -r public && gh-pages -d public"
   },
   "devDependencies": {
     "dat": "^13.10.0",
