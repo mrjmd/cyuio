@@ -64,4 +64,13 @@ Currently ```npm run deploy``` will build the static site with Gatsby, push it t
 
 ## Notes & Roadmap
 
+### Known Issues
+
+My notes above are somwhat incomplete, because they assume some knowledge and also they gloss over one major shortcoming of my deploy scripts: that the Gatsby ```pathPrefix``` configuration variable actually needs to be switched out for each deploy destination. This means that technically to do a full deploy currently I have to edit gatsby-config.js before building Gatsby separately before each deploy:
+* For Github Pages deploy, it needs to be the same as the github project name, ```pathPrefix: '/cyuio'```. Then run ```gatsby build --prefix-paths && gh-pages -d public```
+* For DAT, it needs to not be used at all, so ```gatsby build && dat share public```
+* For IPFS, it needs to include your $SITE_HASH referenced above, so something like ```pathPrefix: '/ipns/QmaLp9R3mX38RpFH2hiud6r3FbTGup5mDfbFuNCahBAXAw'```. Then run ```gatsby build --prefix-paths && ipfs add -r public && ipfs name publish $DIR_HASH```
+
+### Longer term plans
+
 I have a lot of plans for cyu.io, but at this point it is primarily a sandbox for trying out new decentralized web projects. Since I'm not running my own webserver at the moment the decentralized versions are likely to be down when you read this. Eventually I'll set up hosting either on my own machine or elsewhere.
